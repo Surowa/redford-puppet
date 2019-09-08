@@ -5,3 +5,6 @@ node default {
     owner => 'root',
     }
 }
+node 'redford-brain' {
+  include role::master_server
+}  
