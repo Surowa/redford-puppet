@@ -1,6 +1,7 @@
 class raspberry {
 
 include apt
+include apt::update
 
 apt::source { 'pilight.list':
   comment  => 'pilight',
