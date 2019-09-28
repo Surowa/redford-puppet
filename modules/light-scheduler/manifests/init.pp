@@ -1,13 +1,9 @@
 class light-scheduler {
-file { '/home/ubuntu':
-        ensure => directory,
-        owner => 'ubuntu',
-        group => 'ubuntu',
-    }
-file { "/home/ubuntu/test.txt":
+
+file { "/home/pi/scheduler.py":
         mode => "0644",
-        owner => 'ubuntu',
-        group => 'ubuntu',
-        source => 'puppet:///modules/mymodule/test.txt',
+        owner => 'pi',
+        group => 'Linux',
+        source => 'puppet:///modules/light-scheduler/scheduler.py',
     }
 }
