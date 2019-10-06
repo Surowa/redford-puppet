@@ -2,6 +2,9 @@ class raspberry {
 
 include apt
 include apt::update
+include apt-transport-https
+
+
 
 apt::source { 'pilight.list':
   comment  => 'pilight',
