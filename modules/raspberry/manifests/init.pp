@@ -2,8 +2,8 @@ class raspberry {
 
 include apt
 include apt::update
-include apt-transport-https
 
+ Exec['apt_get_update']
 
 
 apt::source { 'pilight.list':
@@ -17,7 +17,7 @@ apt::source { 'pilight.list':
   include  => {
     'src' => true,
     'deb' => true,
-  },
+    },
 }
 
 
