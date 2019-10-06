@@ -3,15 +3,8 @@ class raspberry {
 include apt
 include apt::update
 
-
-apt::source { 'pilight.list':
-  comment  => 'pilight',
-  location => 'http://apt.pilight.org/',
-  release  => 'stable',
-  repos    => 'main',
-  key    => {
-     'server' => 'http://apt.pilight.org/pilight.key',
-  },
+exec { 'pilight':
+  command  => 'echo "deb http://apt.pilight.org/ stable main" > /etc/apt/sources.list.d/pilight.list && wget -O - http://apt.pilight.org/pilight.key | apt-key add -',
 }
 
 
