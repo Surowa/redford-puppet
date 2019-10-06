@@ -3,8 +3,6 @@ class raspberry {
 include apt
 include apt::update
 
- Exec['apt_get_update']
-
 
 apt::source { 'pilight.list':
   comment  => 'pilight',
