@@ -14,10 +14,6 @@ apt::source { 'pilight.list':
   key    => {
      'server' => 'http://apt.pilight.org/pilight.key',
   },
-  include  => {
-    'src' => true,
-    'deb' => true,
-    },
 }
 
 
