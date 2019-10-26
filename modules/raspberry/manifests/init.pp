@@ -4,7 +4,7 @@ file { '/home/pi/':
         ensure => present,
         owner => 'pi',
         recurse => remote,
-        source => "rpup02.redford.nl:///modules/raspberry/files/$file",
+        source => "puppet:///modules/raspberry/files/$file",
      }
 
 
