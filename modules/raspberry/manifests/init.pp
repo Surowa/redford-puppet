@@ -10,5 +10,7 @@ file { '/home/pi/':
 
 package { 'python3': ensure => installed, }
 package { 'git': ensure => installed, }
+package { 'cec-utils': ensure => installed, }
+package { 'kodi': ensure => installed, }
 
 }
