@@ -1,4 +1,4 @@
-Dutch home automation system. Very unstable as of now, is it basically laurensw's STT frontend/backend connected to an actual Debian-based operating system. This allows one to say "Lampen uit", for example, which will turn off the lights connected to 433 Mhz KlikAanKlikUit sockets.
+Dutch home automation system. Very unstable as of now, is it basically laurensw's STT frontend/backend connected to an actual Debian-based operating system. This allows one to say "Lampen uit", for example, which will turn off the lights connected to 433 Mhz KlikAanKlikUit sockets. Or say "televisie uit" , which will result in the system turning off the television connected via HDMI to a Pi. 
 
 Eventually, TTS and some heavier decision making than if/else will be integrated as well.
 
