@@ -3,10 +3,17 @@ Dutch home automation system. Very unstable as of now, is it basically laurensw'
 Eventually, TTS and some heavier decision making than if/else will be integrated as well.
 
 Installation
-To install and use (very early beta, so errors may occur):
+To install and use (very early beta, so errors may occur). This guide requires familiarity with Puppet.
+All scripts, commands, certificates, and ssh keys and packages will be installed via Puppet from scratch. 
 
-Copy the client folder to all clients ( RPI3 or 3B+ running Ubuntu Mate, using a USB microphone) and follow the README there.
+-Install a puppet master with Foreman-Installer
+-Install  r10k on the master
+-Run "r10k deploy environment -p" on the master
+-Install puppet clients on Raspbian while pointing to the master, create a host group for clients, specifically for the Raspberries class and apply it
+-Install puppet clients on raspberry pis runing Ubuntu Mate while pointing to the master, create a host group for clients, specifically for the SST-clients class and apply it
+-Install puppet clients on Ubuntu LTS while pointing to the master, create a host group for clients, specifically for the SST-server class and apply it
+-Run 'puppet agent -t' on all clients as root
+-Run 'start-server.sh' on the SST server
+-Run 'start-client.sh' on all SST clients
 
-Copy the server folder to the server (RPI3 or 3B+ running Raspbian Stretch), this should also be the server where the 433 MHZ receiver/transmitter combo is located. Then run the installation script there.
 
-The clients should be able to SSH connect passwordless (so with SSH keys) to the server, so you will need to set that up.
