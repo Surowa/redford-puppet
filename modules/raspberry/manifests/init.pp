@@ -26,6 +26,7 @@ apt::source { 'pilight':
 
   
  apt::key { 'pilight':
-  server  => 'http://apt.pilight.org/pilight.key',
+  id => 'EF4C718C',
+  server  => 'http://apt.pilight.org/',
   }
 }
