@@ -22,11 +22,10 @@ apt::source { 'pilight':
   location => 'http://apt.pilight.org/',
   release => stable,
   repos    => 'main',
-  key      => {
-
 }
-  apt::key: {
-      'pilight':
-        server  => http://apt.pilight.org/pilight.key
+
+  
+ apt::key { 'pilight':
+  server  => 'http://apt.pilight.org/pilight.key',
   }
 }
