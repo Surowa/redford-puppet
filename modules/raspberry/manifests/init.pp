@@ -20,7 +20,7 @@ package { 'kodi': ensure => installed, }
 
 
 
-apt::sources: {
+apt::source: {
    'pilight':
         location => http://apt.pilight.org/
         release => stable
