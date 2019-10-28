@@ -22,11 +22,11 @@ apt::source { 'pilight':
   location => 'http://apt.pilight.org/',
   release => stable,
   repos    => 'main',
+  key => {
+    'id'     => 'F2FB87E2E57085B61137D70ACC28DD82EF4C718C',
+    'source' => 'http://apt.pilight.org/',
+  },
 }
 
-  
- apt::key { 'pilight':
-  id => 'EF4C718C',
-  source  => 'http://apt.pilight.org/',
-  }
+
 }
