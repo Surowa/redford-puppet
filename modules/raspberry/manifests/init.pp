@@ -18,13 +18,12 @@ package { 'git': ensure => installed, }
 package { 'cec-utils': ensure => installed, }
 package { 'kodi': ensure => installed, }
 
+apt::source { 'pilight':
+  location => 'http://apt.pilight.org/',
+  release => stable,
+  repos    => 'main',
+  key      => {
 
-
-apt::source: {
-   'pilight':
-        location => http://apt.pilight.org/
-        release => stable
-        repos => main
 }
   apt::key: {
       'pilight':
