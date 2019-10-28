@@ -18,13 +18,14 @@ package { 'kodi': ensure => installed, }
 
 
 
-apt::sources:
+apt::sources: {
    pilight:
-        location: http://apt.pilight.org/
-        release: stable
-        repos: main
-
-  apt::keys:
+        location => http://apt.pilight.org/
+        release => stable
+        repos => main
+}
+  apt::keys: {
       pilight:
-        key_source: http://apt.pilight.org/pilight.key
+        key_source => http://apt.pilight.org/pilight.key
+  }
 }
