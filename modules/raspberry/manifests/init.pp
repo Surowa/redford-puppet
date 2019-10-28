@@ -1,4 +1,6 @@
+include apt
 class raspberry {
+
 
 file { '/home/pi/':
         ensure => present,
@@ -19,13 +21,13 @@ package { 'kodi': ensure => installed, }
 
 
 apt::sources: {
-   pilight:
+   'pilight':
         location => http://apt.pilight.org/
         release => stable
         repos => main
 }
-  apt::keys: {
-      pilight:
-        key_source => http://apt.pilight.org/pilight.key
+  apt::key: {
+      'pilight':
+        server  => http://apt.pilight.org/pilight.key
   }
 }
