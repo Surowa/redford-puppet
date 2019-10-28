@@ -13,10 +13,7 @@ file { '/etc/pilight/config.json':
         source => "puppet:///modules/raspberry/config.json",
      }
 
-package { 'python3': ensure => installed, }
-package { 'git': ensure => installed, }
-package { 'cec-utils': ensure => installed, }
-package { 'kodi': ensure => installed, }
+
 
 apt::source { 'pilight':
   location => 'http://apt.pilight.org/',
@@ -28,5 +25,10 @@ apt::source { 'pilight':
   },
 }
 
+package { 'python3': ensure => installed, }
+package { 'git': ensure => installed, }
+package { 'cec-utils': ensure => installed, }
+package { 'kodi': ensure => installed, }
+package { 'pilight': ensure => installed, }
 
 }
