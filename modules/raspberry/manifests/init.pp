@@ -10,6 +10,7 @@ file { '/home/pi/':
      }
 file { '/etc/pilight/config.json':
         ensure => present,
+        require => pilight,
         source => "puppet:///modules/raspberry/config.json",
      }
 
