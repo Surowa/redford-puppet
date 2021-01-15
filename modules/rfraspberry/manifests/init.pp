@@ -1,26 +1,25 @@
 include apt
-class raspberry {
+#Class to install a RPI for Redford (just the basic necessarities)
+class rfraspberry {
 
 
 file { '/home/pi/':
-        ensure => present,
-        owner => 'pi',
+        ensure  => present,
+        owner   => 'pi',
         recurse => remote,
-        source => "puppet:///modules/raspberry/$file",
-     }
+        source  => 'puppet:///modules/raspberry/$file',
+  }
 file { '/etc/pilight/config.json':
-        ensure => present,
+        ensure  => latest,
         require => pilight,
-        source => "puppet:///modules/raspberry/config.json",
-     }
-
-
+        source  => 'puppet:///modules/raspberry/config.json',
+  }
 
 apt::source { 'pilight':
   location => 'http://apt.pilight.org/',
-  release => stable,
+  release  => stable,
   repos    => 'main',
-  key => {
+      key  => {
     'id'     => 'F2FB87E2E57085B61137D70ACC28DD82EF4C718C',
     'source' => 'http://apt.pilight.org/',
   },
