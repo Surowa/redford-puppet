@@ -11,7 +11,7 @@ file { '/home/pi/':
   }
 file { '/etc/pilight/config.json':
         ensure  => latest,
-        require => pilight,
+        require => Package['pilight'],
         source  => 'puppet:///modules/raspberry/config.json',
   }
 
@@ -29,6 +29,6 @@ package { 'python3': ensure => installed, }
 package { 'git': ensure => installed, }
 package { 'cec-utils': ensure => installed, }
 package { 'kodi': ensure => installed, }
-package { 'pilight': ensure => installed, }
+package { 'pilight': ensure => installed, require => Apt::Source['pilight']}
 
 }
