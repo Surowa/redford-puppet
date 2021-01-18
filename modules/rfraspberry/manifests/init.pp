@@ -1,4 +1,3 @@
-include apt
 #Class to install a RPI for Redford (just the basic necessarities)
 class rfraspberry {
 
